@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteUser = exports.updateUser = exports.getUserById = exports.getUsers = exports.createUser = void 0;
 const user_model_1 = require("../models/user.model");
-// Create User
 const createUser = async (req, res) => {
     try {
         const { name, email } = req.body;
@@ -20,7 +19,6 @@ const createUser = async (req, res) => {
     }
 };
 exports.createUser = createUser;
-// Get All Users
 const getUsers = async (_req, res) => {
     try {
         const users = await user_model_1.User.findAll();
@@ -37,7 +35,6 @@ const getUsers = async (_req, res) => {
     }
 };
 exports.getUsers = getUsers;
-// Get One User
 const getUserById = async (req, res) => {
     try {
         const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
@@ -52,7 +49,6 @@ const getUserById = async (req, res) => {
     }
 };
 exports.getUserById = getUserById;
-// Update User
 const updateUser = async (req, res) => {
     try {
         const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
@@ -68,7 +64,6 @@ const updateUser = async (req, res) => {
     }
 };
 exports.updateUser = updateUser;
-// Delete User
 const deleteUser = async (req, res) => {
     try {
         const id = Array.isArray(req.params.id) ? req.params.id[0] : req.params.id;
